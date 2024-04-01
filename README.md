@@ -7,8 +7,8 @@ This ontology describes the concepts and relationships relevant to e-commerce te
 1.0
 
 ## Creator
-Vincent Durham
-Abdulaziz Almahawri
+### Vincent Durham
+### Abdulaziz Almahawri
 
 ## License
 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
