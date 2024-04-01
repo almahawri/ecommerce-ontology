@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ecommercetech.org/"
+     xml:base="http://www.ecommercetech.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:et="http://www.ecommercetech.org/1.0.0#"
+     xmlns:store="http://www.ecommercetech.org/store#">
+    <owl:Ontology rdf:about="http://www.ecommercetech.org">
+        <owl:versionIRI rdf:resource="http://www.ecommercetech.org/1.0.0"/>
+        <rdfs:comment xml:lang="en">This website contains an E-commerce technology ontology</rdfs:comment>
+        <rdfs:label>E-commerce Technology Ontology</rdfs:label>
+        <owl:priorVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</owl:priorVersion>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecommercetech.org/hasBrand -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecommercetech.org/hasBrand">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Product"/>
+        <rdfs:range rdf:resource="http://www.ecommercetech.org/Brand"/>
+        <rdfs:comment>Certain products have different brands or manufacturers</rdfs:comment>
+        <rdfs:label xml:lang="en">hasBrand</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/hasCustomer -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecommercetech.org/hasCustomer">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <rdfs:range rdf:resource="http://www.ecommercetech.org/Customer"/>
+        <rdfs:comment>A retail company has a range of different customers</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCustomer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/hasRetailerStore -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecommercetech.org/hasRetailerStore">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Product"/>
+        <rdfs:range rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <rdfs:comment>A product is carried by a range of different retail stores</rdfs:comment>
+        <rdfs:label xml:lang="en">hasRetailerStore</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/providesRetailData -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecommercetech.org/providesRetailData">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Customer"/>
+        <rdfs:range rdf:resource="http://www.ecommercetech.org/RetailData"/>
+        <rdfs:comment>Customers provide retail companies with data such as satisfaction scores and product reviews</rdfs:comment>
+        <rdfs:label xml:lang="en">providesRetailData</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/purchasedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecommercetech.org/purchasedBy">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Product"/>
+        <rdfs:range rdf:resource="http://www.ecommercetech.org/Customer"/>
+        <rdfs:comment>A product is purchased by a range of customers</rdfs:comment>
+        <rdfs:label xml:lang="en">purchasedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/sellsBrand -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecommercetech.org/sellsBrand">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <rdfs:range rdf:resource="http://www.ecommercetech.org/Brand"/>
+        <rdfs:comment>A retailer store sells or does not sell different brands</rdfs:comment>
+        <rdfs:label xml:lang="en">sellsBrand</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/sellsCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.ecommercetech.org/sellsCategory">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <rdfs:range rdf:resource="http://www.ecommercetech.org/Category"/>
+        <rdfs:comment>A retail store carries a certain category or not</rdfs:comment>
+        <rdfs:label xml:lang="en">sellsCategory</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecommercetech.org/Price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/Price">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Product"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailData"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The price of a product</rdfs:comment>
+        <rdfs:label xml:lang="en">Price</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/Profit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/Profit">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The total profit a company makes off of electronic sales</rdfs:comment>
+        <rdfs:label xml:lang="en">Profit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/brandName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/brandName">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Brand"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of any electronic product manufacturer</rdfs:comment>
+        <rdfs:label xml:lang="en">brandName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/companyName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/companyName">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of any company that sells electronic products</rdfs:comment>
+        <rdfs:label xml:lang="en">companyName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/customerSatisfactionScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/customerSatisfactionScore">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Customer"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailData"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The overall satisfaction of a customer with their purchase from a specific retailer</rdfs:comment>
+        <rdfs:label xml:lang="en">customerSatisfactionScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/firstName">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The first name of a Person</rdfs:comment>
+        <rdfs:label xml:lang="en">firstName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/lastName">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The last name of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">lastName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/productReview -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/productReview">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Customer"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/RetailData"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A review on a product bought from a certain retailer</rdfs:comment>
+        <rdfs:label xml:lang="en">productReview</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/profitByBrand -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/profitByBrand">
+        <rdfs:subPropertyOf rdf:resource="http://www.ecommercetech.org/Profit"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Brand"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/profitByCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/profitByCategory">
+        <rdfs:subPropertyOf rdf:resource="http://www.ecommercetech.org/Profit"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Audio"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Camera"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Cell_phone"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Computer"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Gaming"/>
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Television"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The profit a company makes by each category of electronic</rdfs:comment>
+        <rdfs:label xml:lang="en">profitByCategory</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ecommercetech.org/totalUnitsSold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ecommercetech.org/totalUnitsSold">
+        <rdfs:domain rdf:resource="http://www.ecommercetech.org/Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The total number of units sold across all retailers</rdfs:comment>
+        <rdfs:label xml:lang="en">totalUnitsSold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecommercetech.org/Audio -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Audio">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Category"/>
+        <rdfs:comment>Any product or accessory related to audio, including speakers and headphones</rdfs:comment>
+        <rdfs:label xml:lang="en">Audio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Brand -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Brand">
+        <rdfs:comment>The brand identifies the company who made the product</rdfs:comment>
+        <rdfs:label xml:lang="en">Brand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Camera -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Camera">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Category"/>
+        <rdfs:comment>Any product related to cameras or camcorders</rdfs:comment>
+        <rdfs:label xml:lang="en">Cameras</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Category -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Category">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Product"/>
+        <rdfs:comment>Sets up the different categories of products</rdfs:comment>
+        <rdfs:label xml:lang="en">Category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Cell_phone -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Cell_phone">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Category"/>
+        <rdfs:comment>Any product related to cellular devices, such as phone hardware, upgrades, or accessories</rdfs:comment>
+        <rdfs:label xml:lang="en">Cell_phones</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Computer -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Computer">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Category"/>
+        <rdfs:comment>Any product related to computer technology, including monitors, laptops, and accessories</rdfs:comment>
+        <rdfs:label xml:lang="en">Computers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Customer -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Customer">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Person"/>
+        <rdfs:comment>A person who is involved in the sale of a product</rdfs:comment>
+        <rdfs:label xml:lang="en">Customer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Gaming -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Gaming">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Category"/>
+        <rdfs:comment>Any product related to gaming, including systems, accessories, and games</rdfs:comment>
+        <rdfs:label xml:lang="en">Gaming</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Person -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Person">
+        <rdfs:comment>Any type of person</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Product -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Product">
+        <rdfs:comment>Any product that is for sale at electronics stores</rdfs:comment>
+        <rdfs:label xml:lang="en">Product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/RetailCompany -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/RetailCompany">
+        <rdfs:comment>The retail company is where the product was sold at</rdfs:comment>
+        <rdfs:label xml:lang="en">RetailCompany</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/RetailData -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/RetailData">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <rdfs:comment>Retail data refers to the sales and number of items sold by each retailer.</rdfs:comment>
+        <rdfs:label xml:lang="en">RetailData</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ecommercetech.org/Television -->
+
+    <owl:Class rdf:about="http://www.ecommercetech.org/Television">
+        <rdfs:subClassOf rdf:resource="http://www.ecommercetech.org/Category"/>
+        <rdfs:comment>Any product or accessory related to televisions</rdfs:comment>
+        <rdfs:label xml:lang="en">Television</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ecommercetech.org#AirPods_Pro -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#AirPods_Pro">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Audio"/>
+        <hasBrand rdf:resource="http://www.ecommercetech.org#Apple"/>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">249</Price>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.5</productReview>
+        <totalUnitsSold rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 million units</totalUnitsSold>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Apple -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Apple">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Apple_Inc. -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Apple_Inc.">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+        <sellsBrand rdf:resource="http://www.ecommercetech.org#Apple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Canon -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Canon">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Canon_EOS_R6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Canon_EOS_R6">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Camera"/>
+        <hasBrand rdf:resource="http://www.ecommercetech.org#Canon"/>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2499</Price>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.7</productReview>
+        <totalUnitsSold rdf:datatype="http://www.w3.org/2001/XMLSchema#string">500,000 units</totalUnitsSold>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Dell -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Dell">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#HP -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#HP">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#John_Smith -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#John_Smith">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Customer"/>
+        <customerSatisfactionScore rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.5</customerSatisfactionScore>
+        <firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John</firstName>
+        <lastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smith</lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#LG -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#LG">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#MacBook_Pro -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#MacBook_Pro">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Computer"/>
+        <hasBrand rdf:resource="http://www.ecommercetech.org#Apple"/>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1999</Price>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.9</productReview>
+        <totalUnitsSold rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 million units</totalUnitsSold>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Nikon -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Nikon">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#PlayStation_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#PlayStation_5">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Gaming"/>
+        <hasBrand rdf:resource="http://www.ecommercetech.org#Sony"/>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">499</Price>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.8</productReview>
+        <totalUnitsSold rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7 million units</totalUnitsSold>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Sales_data_for_Q1_2024 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Sales_data_for_Q1_2024">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/RetailData"/>
+        <providesRetailData rdf:resource="http://www.ecommercetech.org#Apple_Inc."/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Samsung -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Samsung">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Samsung_Galaxy_S22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Samsung_Galaxy_S22">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Cell_phone"/>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">999</Price>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.8</productReview>
+        <totalUnitsSold rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8 million units</totalUnitsSold>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Samsung_Inc. -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Samsung_Inc.">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/RetailCompany"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Samsung_QLED_4K_TV -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Samsung_QLED_4K_TV">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Television"/>
+        <hasBrand rdf:resource="http://www.ecommercetech.org#Samsung"/>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1499</Price>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 million units</productReview>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.7</productReview>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#Sony -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#Sony">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Brand"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ecommercetech.org#iPhone_13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ecommercetech.org#iPhone_13">
+        <rdf:type rdf:resource="http://www.ecommercetech.org/Cell_phone"/>
+        <hasBrand rdf:resource="http://www.ecommercetech.org#Apple"/>
+        <purchasedBy rdf:resource="http://www.ecommercetech.org#John_Smith"/>
+        <Price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">999</Price>
+        <productReview rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.8</productReview>
+        <totalUnitsSold rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 million units</totalUnitsSold>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
